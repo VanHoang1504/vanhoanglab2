@@ -1,118 +1,220 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
+import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import Main from '../LamLab2/Main';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style={styles.container}>
+      <Main />
     </View>
   );
 }
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
+export default App;
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
+  container: {
+    flex: 1, // Take up all available space
   },
 });
 
-export default App;
+//slide2 buoi1
+// import { Button, StyleSheet, Text, View } from 'react-native'
+// import React,{useCallback, useMemo, useRef, useState} from 'react'
+// import TestMeno from './TestMeno';
+
+// const App = () => {
+//   const[so1,setso1]=useState(0);
+//   const[so2,setso2]=useState(0);
+//   const incre = useCallback(()=>{
+//     setso2(so2+1)
+//   },[so2])
+//   const bp = useMemo(()=>{
+//     return so1*so1
+//   },[so1]);
+  
+
+
+
+
+
+
+
+
+  
+//   return ( 
+//     <View>
+//       <Text style={{fontSize:40}}>{bp}</Text>
+//       <Text style={{fontSize:40}}>{so1}</Text>
+//       <Text style={{fontSize:40}}>{so2}</Text>
+//       <Button title={'change so1'} onPress={()=>{
+//         setso1(so1 + 1)
+//       }}/>
+//       <Button title={'change so2'} onPress={incre
+//       }/>
+//     </View>
+//   )
+// }
+
+// export default App
+
+// const styles = StyleSheet.create({})
+
+
+// import React from 'react';
+// import { View, Text, Image, TouchableOpacity } from 'react-native';
+
+// const SectionView = ({ title, data }) => {
+//   const renderChild = (childTitle, childData) => {
+//     return (
+//       <View style={{ marginVertical: 10 }}>
+//         {childData.map((item, index) => (
+//           <View key={index} style={{ flexDirection: 'column', }}>
+//             <Text style={{ marginRight: 5,marginLeft:10 }}>{item.label}:</Text>
+//             <Text style={{fontWeight:'700',color:'black',marginLeft:10}}>{item.value}</Text>
+//           </View>
+//         ))}
+//       </View>
+//     );
+//   };
+
+//   const renderSection = () => {
+//     return (
+//       <View style={{ padding: 10, backgroundColor: '#f0f0f0' ,}}>
+//         <Text style={{ fontWeight: 'bold', fontSize: 18 }}>{title}</Text>
+//         {data.map((item, index) => (
+//           <View key={index} style={{ borderWidth:1,borderRadius:10,marginTop:10}}>
+//             {renderChild(item.title, item.data)}
+//             {item.image && <Image source={{ uri: item.image }} style={{ width: '94%', height: 120, marginTop: 5 ,margin:10}} />}
+//             {item.title === 'Khách sạn' && (
+//               <TouchableOpacity 
+//                 style={{ backgroundColor: 'lightblue', padding: 10, alignItems: 'center', borderRadius: 10, margin: 10 }}
+//                 onPress={() => console.log("Chi tiết button pressed")}
+//               >
+//                 <Text style={{ fontWeight: 'bold' }}>Chi tiết</Text>
+//               </TouchableOpacity>
+//             )}
+//           </View>
+//         ))}
+//       </View>
+//     );
+//   };
+
+//   return renderSection();
+// };
+
+// const App = () => {
+//   const eventAndHotelInfo = [
+//     {
+//       title: 'Lịch trình',
+//       data: [
+//         { label: 'Địa điểm', value: 'Hồ Tràm - Vũng Tàu' },
+//         { label: 'Thời gian', value: '09:00 AM - 12:00 AM, 12/12/2024' },
+//         { label: 'Phương tiện di chuyển', value: 'Xe bus' },
+//         { label: 'Thời gian di chuyển', value: '21:00-22:00' }
+//       ],
+//       image: 'https://cms.haivan.com/photos/kinh-nghiem-du-lich-ho-tram-vung-tau-cap-nhat-moi-nhat-2020-1.jpg'
+//     },
+//     {
+//       title: 'Khách sạn',
+//       data: [
+//         { label: 'Tên khách sạn', value: 'Hồng Quỳnh' },
+//         { label: 'Giờ mở cửa', value: '6:00 AM - 12:00 AM' },
+//         { label: 'Địa điểm', value: '234 Quang Trung, Hồ Chí Minh' }
+//       ],
+//     }
+//   ];
+
+//   return (
+//     <View style={{ flex: 1 }}>
+//       <SectionView title="Lịch trình" data={[eventAndHotelInfo[0]]} />
+//       <SectionView title="Khách sạn" data={[eventAndHotelInfo[1]]} />
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// import React from 'react';
+// import { View, Text, Image, TouchableOpacity } from 'react-native';
+
+// const CustomHeader = ({ title, renderLeft, renderCenter, renderRight }) => {
+//   return (
+//     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', height: 60, backgroundColor: 'lightblue' }}>
+//       <View>{renderLeft && renderLeft()}</View>
+//       <View>{title ? <Text style={{ fontWeight: 'bold' }}>{title}</Text> : (renderCenter && renderCenter())}</View>
+//       <View>{renderRight && renderRight()}</View>
+//     </View>
+//   );
+// };
+
+// const App = () => {
+//   const renderLeft = () => {
+//     return (
+//       <TouchableOpacity onPress={() => console.log("Left icon pressed")}>
+//         <Image source={{ uri: 'https://cdn-icons-png.flaticon.com/512/93/93634.png' }} style={{ marginLeft: 10, width: 20, height: 20 }} />
+//       </TouchableOpacity>
+//     );
+//   };
+
+//   const renderCenter = () => {
+//     return (
+//       <>
+//         <Text style={{ fontWeight: 'bold' }}>Header</Text>
+//         <Text style={{ fontWeight: 'bold' }}>Trang Chủ</Text>
+//       </>
+//     );
+//   };
+
+//   const renderRight = () => {
+//     return (
+//       <TouchableOpacity onPress={() => console.log("Right icon pressed")}>
+//         <Image source={{ uri: 'https://cdn-icons-png.flaticon.com/512/878/878516.png' }} style={{ marginRight: 10, width: 20, height: 20 }} />
+//       </TouchableOpacity>
+//     );
+//   };
+
+//   return (
+//     <View style={{ flex: 1 }}>
+//       <CustomHeader title="Header" renderLeft={renderLeft} renderRight={renderRight} />
+//       <CustomHeader title="Trang Chủ" renderLeft={renderLeft} renderRight={renderRight} />
+//       <CustomHeader renderLeft={renderLeft} renderRight={renderRight} />
+//     </View>
+//   );
+// };
+
+// export default App;
+
+
+
+
+
+
+// import { StyleSheet, Text, View } from 'react-native'
+// import React from 'react'
+// import MyTextInput from './MyTextInput'
+// import Lab1 from './Lab1'
+// import MyView from './baitap/MyView'
+
+// const App = () => {
+//   return (
+//     // <View>
+//     //   <MyTextInput title={'Username'} hint={'Enter Username...'} iconURL={"https://cdn0.iconfinder.com/data/icons/shift-interfaces/32/Error-512.png"}/>
+//     //   <MyTextInput title={'Password'} hint={'Enter Password...'} iconURL={"https://cdn0.iconfinder.com/data/icons/shift-interfaces/32/Error-512.png"}/>
+
+//     // </View>
+//     <View>
+//       <Lab1 title={'Title1'} hint={'Enter Title1...'} iconURL={"https://cdn0.iconfinder.com/data/icons/shift-interfaces/32/Error-512.png"}/>
+
+//     </View>
+//     // <View style={{flex:1,backgroundColor:'white'}}>
+//     //   <MyView height={100} width={100} bg={'black'}></MyView>
+//     //   <MyView height={100} width={200} bg={'green'}/>
+
+//     // </View>
+//   )
+// }
+
+// export default App
+
+// const styles = StyleSheet.create({})
